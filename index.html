@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 轻量导航页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #faf8f5;
+            color: #2f2e2b;
+            line-height: 1.65;
+            padding: 0 1.5rem;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 0 4rem;
+        }
+
+        /* 顶部导航 */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0 0.5rem;
+            border-bottom: 1px solid #e5e1da;
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-brand {
+            font-weight: 500;
+            font-size: 1.2rem;
+            letter-spacing: 0.02em;
+            color: #3f3b35;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5b5752;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #b0764f;
+        }
+
+        /* hero 区 */
+        .hero {
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 420;
+            letter-spacing: -0.01em;
+            color: #2b2722;
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #5a5650;
+            max-width: 70%;
+        }
+
+        @media (max-width: 600px) {
+            .hero p {
+                max-width: 100%;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* 引用 / 提示框 */
+        .notice-box {
+            background-color: #f1ede8;
+            border-left: 5px solid #c7b5a2;
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            color: #3f3a34;
+        }
+
+        .notice-box strong {
+            color: #7e644f;
+        }
+
+        /* 通用区块 */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 420;
+            margin: 2.2rem 0 0.6rem;
+            color: #3b362f;
+            border-bottom: 1px dashed #ddd9d2;
+            padding-bottom: 0.3rem;
+        }
+
+        .section-sub {
+            color: #5f5a53;
+            margin-bottom: 1.2rem;
+        }
+
+        /* 三个场景模块 — 卡片式 */
+        .scenes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.2rem 0 2rem;
+        }
+
+        .scene-card {
+            flex: 1 1 200px;
+            background: #ffffffef;
+            padding: 1.5rem 1.2rem;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.04);
+            border: 1px solid #ebe7e0;
+            transition: transform 0.15s ease, box-shadow 0.2s;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+        }
+
+        .scene-card h3 {
+            font-weight: 480;
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+            color: #4e453e;
+        }
+
+        .scene-card p {
+            font-size: 0.92rem;
+            color: #5d5851;
+        }
+
+        /* faq 简约折叠样式 */
+        .faq-item {
+            border-bottom: 1px solid #e2ddd6;
+            padding: 0.8rem 0;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 470;
+            color: #3d3831;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-question::before {
+            content: "▸";
+            color: #b79b85;
+            font-size: 1rem;
+        }
+
+        .faq-answer {
+            color: #5d5750;
+            margin-left: 1.3rem;
+            font-size: 0.92rem;
+            padding-top: 0.15rem;
+        }
+
+        /* 底部连接 */
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2ded7;
+            font-size: 0.9rem;
+            color: #6c665e;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.8rem;
+        }
+
+        .footer-note a {
+            color: #8b765f;
+            text-decoration: none;
+            border-bottom: 1px dotted #cfc3b7;
+        }
+
+        .footer-note a:hover {
+            border-bottom: 1px solid #a5876c;
+        }
+
+        .inline-link {
+            color: #8b765f;
+            text-decoration: none;
+            border-bottom: 1px dotted #cfc3b7;
+        }
+
+        .inline-link:hover {
+            border-bottom: 1px solid #a5876c;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e5e0d9;
+            margin: 1.8rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 导航 -->
+    <nav class="nav">
+        <span class="nav-brand">华体会 · 轻指引</span>
+        <div class="nav-links">
+            <a href="#intro">介绍</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">说明</a>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <section class="hero">
+        <h1>华体会 · 从识别到使用</h1>
+        <p>当你第一次看到「华体会」三个字，或许会好奇它指向怎样的服务。这个页面帮你快速建立起认知——它是什么、在什么情境下出现、以及如何判断它是否与你的需求相关。</p>
+    </section>
+
+    <!-- 提示框 引用风格 -->
+    <div class="notice-box">
+        <strong>一点背景</strong> · 华体会并不是一个孤立的名称，它往往与特定的平台或社区相关联。如果你在某个应用或网页中见到这组词汇，通常意味着它代表一个整合了资讯、互动或工具功能的入口。
+    </div>
+
+    <!-- 核心介绍 自然段落 -->
+    <section id="intro">
+        <h2 class="section-title">从用途开始理解</h2>
+        <p class="section-sub">与其把它当作一个抽象概念，不如直接看它实际连接了什么。</p>
+        <p style="margin-bottom:1rem;">
+            简而言之，<a href="https://zhapp-hth.com.cn" class="inline-link">华体会</a> 指向一个提供特定主题内容的站点。它的界面风格偏向轻巧、直接，没有过多冗余装饰。对初次接触的人来说，最直观的感受是：信息层级清楚，操作路径较短。你不需要反复寻找某个功能，大多数常用入口都在主页面内。
+        </p>
+        <p>
+            如果你习惯于在浏览网页时快速判断一个站点是否值得停留，那么「华体会」的特点在于：它的内容组织偏重实用性，减少无关干扰。无论你是为了获取资讯、浏览某个领域的更新，还是想了解相关服务，都能在较短时间内找到轮廓。
+        </p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section id="scenes">
+        <h2 class="section-title">可能遇到它的三个场景</h2>
+        <p class="section-sub">「华体会」并不会出现在所有地方，但如果你在以下情境中看到它，可以参考这里的说明。</p>
+
+        <div class="scenes">
+            <div class="scene-card">
+                <h3>资讯浏览</h3>
+                <p>在内容聚合或文章列表页中，华体会可能作为一个来源标识出现。此时它代表一个持续更新特定领域信息的站点，内容通常经过分类整理，便于按兴趣筛选。</p>
+            </div>
+            <div class="scene-card">
+                <h3>工具入口</h3>
+                <p>一些服务导航或功能面板会使用「华体会」作为跳转名称。点击后进入的页面往往提供查询、计算或资源索引等实用功能，而非单纯的宣传页。</p>
+            </div>
+            <div class="scene-card">
+                <h3>社区讨论</h3>
+                <p>在论坛或社交平台上，用户会提及「华体会」来指代某个具体平台。这时它更像一个约定俗成的称呼，了解其指向能帮助你更快融入对话。</p>
+            </div>
+        </div>
+        <p style="font-size:0.92rem; color:#656057; margin-top:0.2rem;">
+            以上场景并不包含所有可能性，但覆盖了大部分常见情况。如果你在自己所处的环境中遇到了上述之一，可以尝试直接访问 <a href="https://zhapp-hth.com.cn" class="inline-link">华体会</a> 确认内容是否匹配。
+        </p>
+    </section>
+
+    <!-- 常见说明 FAQ 摘要 -->
+    <section id="faq">
+        <h2 class="section-title">常见说明</h2>
+        <p class="section-sub">一些简短的回答，帮你省去猜测的时间。</p>
+
+        <div class="faq-item">
+            <div class="faq-question">华体会是一个需要注册才能使用的网站吗？</div>
+            <div class="faq-answer">部分功能或内容可能可以直接浏览，具体情况取决于你访问的页面。建议先打开首页看看，大部分信息是开放的。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">我应该在什么条件下访问它？</div>
+            <div class="faq-answer">当你对相关主题感兴趣，或者需要找到某个特定服务时，把它当作一个普通的参考站点即可。不需要任何特殊条件。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">它的内容偏向哪一类？</div>
+            <div class="faq-answer">整体偏向资讯整合与工具型页面，不刻意渲染情绪，也不采用夸张的营销话术。你可以亲自验证这一点。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">如果我想了解更多，从哪里开始？</div>
+            <div class="faq-answer">直接访问 <a href="https://zhapp-hth.com.cn" class="inline-link">华体会</a> 首页，从导航栏或主要内容区入手。页面结构本身就已经是一种指引。</div>
+        </div>
+    </section>
+
+    <!-- 额外引用块 / 温和提醒 -->
+    <div class="notice-box" style="margin-top: 2rem;">
+        <strong>温和提醒</strong> · 互联网上的名称有时会让人困惑，但「华体会」并不是一个复杂的入口。花几分钟浏览它的实际内容，往往比提前预想更高效。判断是否适合自己，最好的方式就是直接看一看。
+    </div>
+
+    <hr>
+
+    <!-- 底部 -->
+    <footer class="footer-note">
+        <span>页面内容仅作介绍 · 非官方声明</span>
+        <span>了解 <a href="https://zhapp-hth.com.cn">华体会</a></span>
+    </footer>
+
+</div>
+</body>
+</html>

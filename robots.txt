@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://madiryfus.github.io/zhapp-hth-com-cn-3/sitemap.xml
