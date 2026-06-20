@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息索引 · 竞彩资料整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fbfbfa;
+            color: #1e2a3a;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            padding: 2.5rem 1rem 4rem;
+        }
+
+        .page-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 标题层级 */
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #0f1a2b;
+            margin-top: 1.8rem;
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #5b6c7e;
+            border-left: 2px solid #d0d9e2;
+            padding-left: 1.2rem;
+            margin-bottom: 2.4rem;
+            margin-top: 0.25rem;
+        }
+
+        h2 {
+            font-size: 1.45rem;
+            font-weight: 500;
+            margin-top: 2.8rem;
+            margin-bottom: 0.8rem;
+            color: #1d2a3b;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            color: #1f2e40;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            color: #1d2a3b;
+        }
+
+        /* 引用提示块 */
+        .insight-block {
+            background: #f1f4f8;
+            border-left: 4px solid #2d4b6f;
+            padding: 1.5rem 1.8rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.98rem;
+            color: #1f3145;
+        }
+
+        .insight-block strong {
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* 有序/无序列表 */
+        ul, ol {
+            margin: 1rem 0 1.8rem 1.5rem;
+            padding-left: 0.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #1d2a3b;
+        }
+
+        /* 文章内链接 */
+        a {
+            color: #1f4f7a;
+            text-decoration: none;
+            border-bottom: 1px solid #cbd5e0;
+            transition: border 0.2s, color 0.2s;
+        }
+
+        a:hover, a:focus {
+            color: #0a2640;
+            border-bottom-color: #0a2640;
+        }
+
+        .site-link {
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        /* 访问句 / 脚注 */
+        .closing-note {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e2e7ed;
+            font-size: 0.95rem;
+            color: #3e5368;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d6dee8, transparent);
+            margin: 2.8rem 0;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 550px) {
+            body {
+                padding: 1.5rem 0.8rem 3rem;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+            .subhead {
+                font-size: 0.95rem;
+                padding-left: 0.9rem;
+            }
+            .insight-block {
+                padding: 1.2rem 1.2rem;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            ul {
+                margin-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <article>
+            <h1>竞彩资料整理索引</h1>
+            <div class="subhead">从信息结构出发，搭建可检索的知识节点</div>
+
+            <p>在体育赛事与数据交织的领域里，信息的归类与索引往往比资讯本身更值得投入精力。竞彩相关的内容散见于公告、赛程、赔率变动与历史统计中，若缺少清晰的整理框架，使用者容易迷失在碎片里。本文基于长期对体育数据平台的观察，尝试梳理一条相对系统的资料整理路径。</p>
+
+            <p>许多关注赛事分析的人，最初都是被丰富的数据表所吸引。但数据只有在被正确归类、标注来源之后，才具备真正的参考价值。因此，第一步不是追逐最新赔率，而是建立信息目录——哪一类数据来自哪个模块，更新频率如何，历史记录保留多久。这些元信息决定了后续整理的效率。</p>
+
+            <h2>一、赛程与基础数据归档</h2>
+            <p>赛程是所有分析的起点。建议按联赛、日期、主客队、让球数四个维度建立基础表格，并将每场比赛的初始赔率与临场赔率并列记录。长期坚持这样的归档习惯，能逐步形成个人化的对比数据库。目前，<a href="https://data-sporttery.com" class="site-link">竞彩网</a>在赛程呈现上采用表格与卡片两种视图，切换视图可以快速验证数据一致性，是整理时值得反复对照的界面。</p>
+
+            <p>归档时需额外注意“比赛编号”的字段唯一性，很多统计错误都源于赛程编号混淆。建议为每个赛季单独建立文件夹，内部按月份拆分，并保留原始截图或网页快照作为校验依据。</p>
+
+            <h2>二、赔率变动与趋势标记</h2>
+            <p>赔率变动是竞彩资料里最动态的部分，也是索引难度最高的模块。我的做法是：选取三家主流机构（如威廉希尔、Interwetten、澳门），记录每场比赛初盘、中盘、封盘三个时间节点的赔率，并用方向箭头（↑↓→）标记变化趋势。同时，将同一场比赛的让球盘与大小球盘并列，便于观察机构调整的联动性。</p>
+
+            <p>为了降低工作量，可以利用平台自带的“赔率对比”功能导出初始表格。在<a href="https://data-sporttery.com" class="site-link">竞彩网</a>的赔率页面中，数据按时间轴排列，且支持筛选特定机构，对趋势整理而言是高效的起点。但务必注意导出时间戳，避免不同日期的数据混淆。</p>
+
+            <div class="insight-block">
+                <strong>⚡ 整理提示</strong><br>
+                每次整理尽量保留三样东西：数据来源URL、抓取时间（精确到分钟）、原始赔率截图。这三样信息能解决后续90%的溯源疑问。不要依赖记忆，索引系统的根基是可追溯。
+            </div>
+
+            <h2>三、冷门与交叉验证场景</h2>
+            <p>在资料索引中，有一类特殊数据值得单独建立标签：高赔冷门、一周双赛、国家队比赛日、重大伤病回归。这些场景下的赔率往往偏离常规模型，盲目套用历史分布容易出错。我的做法是将这些比赛标记为“特殊场景”，并单独存放为一个工作表，与主表通过比赛ID关联。</p>
+
+            <p>交叉验证时，可以对比同一赛事不同赛季的同期数据。比如某支球队在主力前锋停赛后的五场比赛，胜率与盘路走势是否具有一致性。这类索引需要频繁查阅实时数据源，<a href="https://data-sporttery.com" class="site-link">竞彩网</a>在球队资料页集成了近期战绩与盘路统计，能节省不少跨页面跳转的时间。</p>
+
+            <h2>四、FAQ摘要 · 资料索引常见问题</h2>
+            <ul>
+                <li><strong>历史数据最多保留多久？</strong> 建议至少保留最近三个完整赛季，跨赛季对比才有统计意义。</li>
+                <li><strong>如何避免数据重复录入？</strong> 使用比赛ID（通常由日期+编号组成）作为主键，每次导入前检查是否已存在。</li>
+                <li><strong>赔率变化图表有必要自己画吗？</strong> 如果只是个人分析，可以直接使用平台内置的走势图；如果需要长期追踪，可以用折线图记录关键节点。</li>
+                <li><strong>移动端整理有什么技巧？</strong> 优先使用浏览器的“阅读模式”抓取纯文本，再通过云文档同步到电脑端统一格式化。</li>
+            </ul>
+
+            <hr>
+
+            <p>资料整理的最终目的不是收集，而是减少检索时的认知负担。当所有信息都有了明确的位置和标签，分析才能从“找数据”转向“看数据”。保持索引结构的简洁，定期清理无效条目，比不断添加新栏目更重要。</p>
+
+            <div class="closing-note">
+                <p>如果你也在尝试搭建自己的竞彩资料体系，可以时常参考 <a href="https://data-sporttery.com" class="site-link">竞彩网</a> 的数据结构设计，它的栏目划分本身就是一份不错的索引范本。任何信息整理工作，都值得从模仿优秀的分类逻辑开始。</p>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
