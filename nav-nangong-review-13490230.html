@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南宫导航 · 轻简识途</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f1f3f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+            color: #2e3a47;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        /* hero 头图 */
+        .hero {
+            background: linear-gradient(145deg, #fafcff, #e9edf2);
+            border-radius: 28px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.04);
+            border: 1px solid rgba(255,255,255,0.6);
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+            color: #1a242e;
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+        }
+
+        .hero .sub {
+            color: #5b6d7c;
+            font-size: 1.1rem;
+            border-left: 3px solid #8faec9;
+            padding-left: 1rem;
+            margin: 0.8rem 0 0 0;
+            font-weight: 380;
+        }
+
+        /* 所有卡片统一风格 */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 1.8rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.03);
+            border: 1px solid #e4e9ef;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04), 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            letter-spacing: -0.2px;
+            color: #1e2b37;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eaeef3;
+            padding-bottom: 0.4rem;
+        }
+
+        h3 {
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: #2b3f4f;
+            margin: 1.4rem 0 0.5rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .intro-text {
+            font-size: 1.06rem;
+        }
+
+        a {
+            color: #2b6f9c;
+            text-decoration: none;
+            border-bottom: 1px dotted #bbd3e6;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 430;
+        }
+
+        a:hover {
+            color: #16425c;
+            border-bottom: 1px solid #1f5f82;
+        }
+
+        /* 引用提示块 */
+        .tip-box {
+            background: #f3f7fb;
+            border-radius: 16px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.6rem 0 0.8rem 0;
+            border-left: 4px solid #6f92af;
+            font-size: 0.98rem;
+            color: #2d4151;
+        }
+
+        .tip-box strong {
+            color: #1f4b67;
+            font-weight: 500;
+        }
+
+        .scene-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.2rem 0 0.2rem 0;
+        }
+
+        .scene-list li {
+            padding: 0.35rem 0 0.35rem 1.5rem;
+            position: relative;
+            border-bottom: 1px dashed #edf1f6;
+        }
+
+        .scene-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #5282a5;
+            font-weight: bold;
+        }
+
+        .faq-item {
+            margin: 0.8rem 0 0.2rem 0;
+        }
+
+        .faq-item strong {
+            color: #1f4b67;
+            font-weight: 500;
+        }
+
+        .visit-sentence {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 0.9rem 2rem;
+            margin-top: 1rem;
+            text-align: center;
+            border: 1px solid #dce3eb;
+            font-size: 1rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #7c8f9f;
+            border-top: 1px solid #e2e7ed;
+            padding-top: 1.5rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 560px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .hero {
+                padding: 1.8rem 1.2rem;
+                border-radius: 20px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .card {
+                padding: 1.5rem 1.2rem;
+                border-radius: 16px;
+            }
+            .visit-sentence {
+                padding: 0.7rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 头区 -->
+    <div class="hero">
+        <h1>南宫导航·轻简识途</h1>
+        <div class="sub">一个帮你快速识别「从哪里出发」的网站索引</div>
+    </div>
+
+    <!-- 第一段：开门见山 网站用途 -->
+    <div class="card intro-text">
+        <p>第一次打开 <a href="https://nav-nangong.com">南宫导航</a> 的人，多半会愣一愣：这页面怎么这么清爽？没有弹窗、没有热力图、没有“每天签到”的催促。它更像一个老朋友递过来的便签——上面只写着你经常用的、真正需要的东西。</p>
+        <p>所谓导航，不是把链接堆成山，而是在你想去某个地方时，告诉你方向。这个站点的想法很简单：把日常高频网络工具、知识资源、实用站点按类整理，去掉广告和干扰，让你的浏览器标签栏喘口气。</p>
+    </div>
+
+    <!-- 第二块：从用户视角谈识别用途 -->
+    <div class="card">
+        <h2>你能用它做什么</h2>
+        <p>多数人第一次打开这类网站会想：“我为什么要用它？书签栏不是更好？” 事实是，书签栏过几年就会变成一座废墟——很多链接失效了、改名了、或者你早忘了当初为什么收藏它。</p>
+        <p><a href="https://nav-nangong.com">南宫导航</a> 定期清理和维护，保证你点开的每一个链接仍然有效。它不是收藏夹，而是一张“活地图”。如果你想快速判断一个网站是否值得信任，或者想查某个文档、找一套设计素材、看技术手册，从这里出发往往比搜索引擎更直接。</p>
+        <div class="tip-box">
+            <strong>一个小提示：</strong> 这个页面没有个人数据追踪，也不要求注册。你打开即用，用完即走。浏览器关掉，它不会记住你，但下次来它还是老样子。
+        </div>
+    </div>
+
+    <!-- 第三块：特点 + 真实场景 -->
+    <div class="card">
+        <h2>什么时候会想起它</h2>
+        <p>并不是每天都需要导航，但总有几个瞬间你特别需要一张经过筛选的列表：</p>
+        <ul class="scene-list">
+            <li>刚搬完新电脑，浏览器空空如也，得把常用网站一个个找回来——这时候打开南宫导航，能省下不少搜索时间。</li>
+            <li>帮不太熟悉网络的朋友远程找某个办事入口，与其口述“你搜那个什么什么局”，不如直接发一个南宫导航里的链接。</li>
+            <li>想看看除了百度、知乎、微博之外，还有哪些小众但有货的站点，分类卡片里常常藏着惊喜。</li>
+        </ul>
+        <p>它不会承诺“一个网站解决所有问题”，但能让你在需要时少翻几次车。</p>
+    </div>
+
+    <!-- FAQ 摘要式卡片 -->
+    <div class="card">
+        <h2>常见疑问（简短版）</h2>
+        <div class="faq-item"><strong>链接安全吗？</strong> —— 所有收录的站点都经过人工查看，没有恶意或仿冒站点。</div>
+        <div class="faq-item"><strong>多久更新一次？</strong> —— 没有固定周期，发现失效链接或更好的替代品就会调整。</div>
+        <div class="faq-item"><strong>我能提交新站点吗？</strong> —— 目前没有公开提交入口，但你可以通过页面上可能出现的联系方式告知维护者。</div>
+        <div class="tip-box" style="margin-top: 1.2rem;">
+            <strong>引用提示：</strong> 如果你在文章、教程或推荐列表里提到这个导航，请直接写“详情请参考南宫导航”即可，不需要加跟踪参数。
+        </div>
+    </div>
+
+    <!-- 访问句 -->
+    <div class="visit-sentence">
+        如果你想在繁杂的网络里找到一个安静的入口，不妨打开 <a href="https://nav-nangong.com">南宫导航</a> 看一眼。它不吵，也不多话。
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+        南宫导航 · 轻简识途
+    </div>
+
+</div>
+</body>
+</html>
